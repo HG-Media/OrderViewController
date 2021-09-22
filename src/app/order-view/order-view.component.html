@@ -1,0 +1,33 @@
+<div>
+    <div>
+      <div style="height: 100px;"></div>
+    <div class="card container" style="width: 800px;">
+    <div class="card-body">
+      <form class="container" style="width: 720px;background-clip: border-box;" >
+        <label class="m-2">Service</label>
+          <div>
+            <div class="card">
+              <div class="card-body" style="white-space: pre-line;">
+                {{values}}
+              </div>
+            </div>
+          </div>
+          <h1></h1>
+        <label class="m-2">Description</label>
+        <select class="form-select" aria-label="Default select example"  (click)="orderView()" [(ngModel)]="value" name= "select">
+            <option *ngFor="let dataItem of taskTypeList;let i=index" [value]="i" >{{dataItem.description}}</option>
+          </select>
+          <h1></h1>
+          <label for="exampleFormControlInput1" class="form-label m-2">Link</label>
+          <input  class="form-control" id="exampleFormControlInput1" [(ngModel)]="link" name="link">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label m-2">Quantity</label>
+            <input class="form-control" id="exampleFormControlInput1" [(ngModel)]="quantity" name="quantity">
+          </div>
+          <button type="button" class="btn btn-info m-3" (click)="submitClick()" name="btnSubmit">Submit</button>
+          <br style="height: 50px;">
+    </form>
+    </div>
+  </div>
+    </div>
+  </div>
