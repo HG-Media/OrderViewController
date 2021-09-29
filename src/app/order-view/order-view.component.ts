@@ -9,11 +9,11 @@ export class OrderViewComponent implements OnInit {
 
   constructor(private service:OrderViewService) { } 
   
-  public taskTypeList:any
+  public serviceList:any
   public values:any;
   public value:number=0
   public link:string="";
-  public charge:string=""
+  public price:number=0
   public quantity:number=0;
   public order:{ [id: number]: IService; }={}
 
@@ -22,35 +22,38 @@ export class OrderViewComponent implements OnInit {
     this.refreshTasktypeList();
   }
   refreshTasktypeList(){
-    this.service.getSerialNumber().subscribe(res =>{
-      this.taskTypeList=res
+    this.service.getService().subscribe(res =>{
+      this.serviceList=res
       this.order=res
     })
   }
 
   public orderView(){
-    this.values = this.order[this.value].taskTypeID
+    this.values = "- Start Time: "+ this.order[this.value].startTime+ "\n"+ "- Speed: "+  this.order[this.value].speed + "\n" +"- Policy: "+  this.order[this.value].policy
+
+    this.price =  this.order[this.value].price ;
   }
 
   public submitClick(){
-    var splitLink=this.link.split('=')
-    var idLink = splitLink[1]
-    var vieworder:number = +this.quantity
       var val = {
-        taskID:0,
-        taskType:this.order[this.value].taskTypeID,
-        keyword:this.order[this.value].description ,
-        idVideo:idLink,
-        viewOrder:vieworder
+        link:this.link,
+        quantity:this.quantity,
+        charge:this.quantity*this.price/1000,
+        serviceID:this.order[this.value].id
       };
-    this.service.addTask(val).subscribe(res=>{
+      console.log("test",val)
+    this.service.submit(val).subscribe(res=>{
       alert("Submit Success!!!!!")
+      console.log(val)
     })
-    
   }
 }
 interface IService {
-  taskTypeID: number;
-  taskID: number;
-  description: string;
+  id: number;
+  service: string;
+  startTime: string;
+  policy: string;
+  speed: string;
+  title: string;
+  price: number;
 }
