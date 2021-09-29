@@ -10,11 +10,11 @@ export class OrderViewService {
 
   constructor(private http:HttpClient, @Inject('BASE_API_URL') private baseUrl: string) { }
 
-  getSerialNumber():Observable<any[]>{
-    return this.http.get<any>(this.baseUrl+"taskType")
+  getService():Observable<any[]>{
+    return this.http.get<any>(this.baseUrl+"service")
   }
  
-  addTask(val:any){
-    return this.http.post(this.baseUrl+ "task", val ,{responseType:"text"})
+  submit(val:any){
+    return this.http.post(this.baseUrl+ "Order", val ,{responseType:"text"})
   }
 }
