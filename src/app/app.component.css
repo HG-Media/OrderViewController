@@ -3,7 +3,7 @@ header{
     width: 100%;
     height: 10vh;
     background-color: #023047;
-    position: block;
+    position: fixed;
     z-index: 1000;
     justify-content: space-between;
     display:flex;
