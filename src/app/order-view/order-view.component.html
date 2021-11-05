@@ -1,6 +1,6 @@
 <div>
     <div>
-      <div style="height: 100px;"></div>
+      <div style="height: 50px;"></div>
     <div class="card container" style="width: 800px;">
     <div class="card-body">
       <form class="container" style="width: 720px;background-clip: border-box;" >
@@ -22,8 +22,12 @@
           <label for="exampleFormControlInput1" class="form-label m-2">Link</label>
           <input  class="form-control" id="exampleFormControlInput1" [(ngModel)]="link" name="link">
           <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label m-2">Quantity</label>
+            <label for="exampleFormControlInput1" class="form-label m-2">Số lượng view order</label>
             <input class="form-control" id="exampleFormControlInput1" [(ngModel)]="quantity" name="quantity">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label m-2">Keyword</label>
+            <input class="form-control" id="exampleFormControlInput1" [(ngModel)]="keyword" name="keyword">
           </div>
           <label class="m-2">Charge</label>
         <div>
@@ -32,6 +36,11 @@
               {{quantity*price/1000}}$
             </div>
           </div>
+          <br style="height: 10px;">
+          <div style="margin-right: 0px;" id="uploadFile" >
+            <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display: none;" name="uploadFile" id="uploadFile">
+            <button type="button" class=" label1" (click)="file.click()"  for="uploadFile" >Upload image thumb ---- {{fileImg}}</button>
+        </div>
         </div>
           <button type="button" class="btn btn-info m-3" (click)="submitClick()" name="btnSubmit">Submit</button>
           <br style="height: 50px;">

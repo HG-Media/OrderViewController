@@ -1,24 +1,32 @@
 header{
     margin: 0;
     width: 100%;
-    height: 60px;
+    height: 10vh;
     background-color: #023047;
     position: fixed;
     z-index: 1000;
+    justify-content: space-between;
+    display:flex;
 }
 .text-title{
     color: white;
     margin-top: 15px;
+    margin-right: 10%;
     margin-left: 10%;
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    position: absolute;
+    position: block;
+    cursor: pointer;
+    z-index: 11111;
 }
-img{
-    margin-top: 60px;
+.img1{
+    position:fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    position: fixed;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.8;
     z-index: 1;
 }
 .body-app{
@@ -38,6 +46,20 @@ img{
     opacity: 0.8;
     z-index: 10;
 }
+
+.bg-image-vertical {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+  }
+  
+  @media (min-width: auto) {
+    .h-custom-2 {
+      height: 100vh;
+    }
+  }
 /* background-image: url(https://cdn.pixabay.com/photo/2013/10/27/17/14/snowfall-201496_960_720.jpg);
     background-size: cover;
     background-repeat: no-repeat;
