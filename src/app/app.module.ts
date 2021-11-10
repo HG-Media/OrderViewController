@@ -24,7 +24,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     CommonModule,
   ],
-  providers: [OrderViewService,{provide: "BASE_API_URL", useValue: "http://192.168.10.70:3126/api/" }],
+  providers: [OrderViewService,{provide: "BASE_API_URL", useValue: "http://27.72.28.11:3126/api/" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
